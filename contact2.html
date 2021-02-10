@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet">
+        <script type="text/javascript">
+           function submitForm(){
+                var first_name = document.getElementById('first_name');
+                console.log(first_name.value);
+                var first_name_output = document.getElementById('first_name_output');
+                first_name_output.innerHTML = first_name.value;
+                
+                var last_name = document.getElementById('last_name');
+
+                var last_name_output = document.getElementById('last_name_output');
+                first_name_output.innerHTML = first_name.value;
+
+                var Email = document.getElementById('Email');
+                console.log(Email.value);
+
+                var Email_output = document.getElementById('Email_output')
+                Email_output.innerHTML = Email.value;
+            
+                var Age  = document.getElementById('Age');
+                console.log(Age.value);
+
+                var Age_output = document.getElementById('Age_output')
+                Age_output.innerHTML = Age.value;
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3>Input</h3>
+                    <form method="GET" action="form_input.php">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input class="form-control" type="text" name="first_name" id="first_name" />
+                        </div>
+                        <div class="form-group">
+                        <label>Last Name</label>
+                        <input  class="form-control"type="text" name="last_name" id="last_name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input class="form-control" type="email" id="email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input class="form-control" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input class="form-control" type="file" />  
+                        </div>
+                        <hr />
+                        <p>Why are you contacting me?</p>
+                        <input type="radio" value="1" name="contact_reason" /> Selling something
+                        <input type="radio" value="2" name="contact_reason" /> Paying one of your bills
+                        <input type="radio" value="3" name="contact_reason" /> Found your puppy
+                        <label>Message</label>
+                        <textarea class="form-control" rows="5" style="width: 100%;"></textarea>
+                        <hr />
+                        <input style="display: inline;" type="checkbox" />
+                        Do you agree to me taking your data and re-selling it?
+                        <!-- <input type="submit" value="Submit Me!" /> -->
+                        <button type="button" onclick="submitForm()">
+                            Submit Form
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <h3>Output</h3>
+                    <p><strong>first name</strong><span id="first_name_output">some text</span></p>
+                    <p><strong>last name</strong><span id="last_name_output">some text</span></p>
+                    <p><strong>Email</strong><span id="Email_output">some text</span></p>
+                    <p><strong>Age</strong><span id="Age_output">some text</span></p>
+                
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
